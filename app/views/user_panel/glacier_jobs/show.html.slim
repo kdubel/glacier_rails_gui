@@ -1,0 +1,9 @@
+h1
+  | Your job scheduled at
+  =@glacier_job.created_at
+  - if @glacier_job.status == GlacierJob::STATUSES[:completed]
+    =render partial: 'user_panel/glacier_jobs/partials/completed_job'
+  - else if @glacier_job.status == GlacierJob::STATUSES[:scheduled]
+    =render partial: 'user_panel/glacier_jobs/partials/scheduled_job
+  - else
+    =render partial: 'user_panel/glacier_jobs/partials/canceled_job'

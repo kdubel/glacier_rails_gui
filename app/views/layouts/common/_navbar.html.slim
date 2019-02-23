@@ -1,0 +1,14 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  =link_to 'Glacier GUI', root_path, class: 'navbar-brand'
+  button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button"
+    span.navbar-toggler-icon
+
+  .collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      li.nav-item
+        =link_to 'Home', root_path, class: 'nav-link'
+    .mr-sm-2
+      = link_to user_panel_home_settings_path do
+        = icon('fas', 'cog')
+        | Settings
+      = link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-danger my-2 my-sm-0'

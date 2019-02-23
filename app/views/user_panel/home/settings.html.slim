@@ -1,0 +1,7 @@
+=form_for @account, url: user_panel_home_settings_path, method: :post do |f|
+  =f.label :aws_id
+  =f.text_field :aws_id
+  =f.label :aws_secret
+  =f.password_field :aws_secret
+
+  =f.submit 'Save'

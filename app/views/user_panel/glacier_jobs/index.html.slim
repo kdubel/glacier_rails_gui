@@ -1,0 +1,17 @@
+h1 Your Glacier Jobs
+
+table
+  thead
+    tr
+      th Date
+      th Vault name
+      th Estimated completion time
+      th Status
+      th
+  tbody
+    - @glacier_jobs.each do |job|
+      tr
+        td= job.created_at.strftime("%d-%M-%Y %H:%m")
+        td= job.name
+        td= (DateTime.now-job.created_at+4.hours)
+        td= job.status

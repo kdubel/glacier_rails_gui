@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title GlacierGUI
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'signin', media: 'all'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  body.text-center
+
+    = yield

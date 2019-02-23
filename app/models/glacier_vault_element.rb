@@ -1,0 +1,2 @@
+class GlacierVaultElement < ApplicationRecord
+end
