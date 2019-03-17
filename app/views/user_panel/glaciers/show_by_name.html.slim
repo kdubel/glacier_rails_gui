@@ -1,0 +1,33 @@
+.col-md-12
+  h1
+    | Glacier
+    =< @vault_name
+
+  hr
+
+  h3 Current jobs
+
+  table.table.table-hover
+    thead.thead-dark
+      tr
+        th Name
+        th Started at
+        th Status
+        th Completed
+    tbody
+      -if @current_jobs.count > 0
+        -@current_jobs.each do |job|
+          tr
+            td=job.name
+            td=job.created_at
+            td=job.status
+            td=job.completed
+      -else
+        tr colspan=4
+          td No jobs here
+
+  hr
+
+  h3 Select job you want to perform
+
+  =link_to 'Empy vault', 

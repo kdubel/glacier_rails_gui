@@ -36,7 +36,7 @@ gem 'slim-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
 
 
-
+gem 'pry'
 
 
 

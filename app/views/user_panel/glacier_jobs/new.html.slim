@@ -1,0 +1,31 @@
+.col-md-12#new_glacier_job
+  h1 New Glacier Job
+  hr
+  h3 Select region
+
+  //TODO COUNT VAOULS IN REGION AND PUT IT IN SELECT OPTIONS
+  #select_region
+    select.custom-select.col-md-8
+      -@regions.each do |region|
+        option value=region[:name]
+          =region[:desc]
+    button.btn.btn-success.col-md-2.offset-md-2
+      | Select
+
+  hr
+
+  #vault_select
+    h3 Select vault
+
+    table.table.table-hover
+      thead.thead-dark
+        tr
+          th Name
+          th Created
+          th Last modified
+          th Archives NO
+          th Size
+      tbody
+        tr
+          td colspan=5 No data for selected region
+

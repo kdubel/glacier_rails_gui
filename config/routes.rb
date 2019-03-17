@@ -8,9 +8,18 @@ Rails.application.routes.draw do
 
   namespace :user_panel do
     get 'home/settings'
-    post 'home/settings', method: 'home#save_settings'
+    post 'home/settings', to: 'home#save_settings'
 
-    resources :glacier_jobs
+    resources :glacier_jobs do
+      collection do
+        get 'get_all_vaults'
+      end
+    end
 
+    resources :glaciers do
+      collection do
+        get 'show_by_name'
+      end
+    end
   end
 end
