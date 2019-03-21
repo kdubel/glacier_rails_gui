@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :glacier_jobs do
       collection do
         get 'get_all_vaults'
+        post 'schedule_new_job'
       end
     end
 

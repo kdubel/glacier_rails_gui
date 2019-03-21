@@ -29,4 +29,17 @@ class UserPanel::GlacierJobsController < UserPanelController
     end
   end
 
+  def schedule_new_job
+    job = GlacierJob.new
+    service = AwsGlacierService.new(current_user.id)
+    if params[:job_type] == 'full_deletion'
+      job.aws_job_id = service.initiate_inventory_retrival(params[:name], params[:region])
+      job.vault_name = params[:name]
+      job.region_name = params[:region]
+      job.aws_account = current_user.aws_account
+      job.save!
+    end
+    redirect_to show_by_name_user_panel_glaciers_path({vault_name: params[:name], region_name: params[:region]})
+  end
+
 end

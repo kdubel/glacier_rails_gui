@@ -34,9 +34,11 @@ gem 'jquery-rails'
 gem 'bootstrap', '~> 4.3.1'
 gem 'slim-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
-
+gem 'whenever'
 
 gem 'pry'
+
+
 
 
 
@@ -61,6 +63,12 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  gem "capistrano", "~> 3.11", require: false
+  gem 'capistrano3-unicorn'
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler', '~> 1.5'
+  gem "capistrano-rails", "~> 1.4", require: false
 end
 
 group :test do

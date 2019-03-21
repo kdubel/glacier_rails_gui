@@ -14,14 +14,16 @@
         th Started at
         th Status
         th Completed
+        th ETA
     tbody
       -if @current_jobs.count > 0
         -@current_jobs.each do |job|
           tr
-            td=job.name
-            td=job.created_at
-            td=job.status
-            td=job.completed
+            td=job[:name]
+            td=job[:created_at]
+            td=job[:status]
+            td=job[:completed]
+            td=unless job[:completed] ? Time.at(4*3600.seconds - (Time.now - job[:created_at])).utc.strftime("%I:%M") : '00:00'
       -else
         tr colspan=4
           td No jobs here
@@ -30,4 +32,4 @@
 
   h3 Select job you want to perform
 
-  =link_to 'Empy vault', 
+  =button_to 'Empy vault', schedule_new_job_user_panel_glacier_jobs_path(name: params[:vault_name], region: params[:region_name], job_type: 'full_deletion'), method: :post

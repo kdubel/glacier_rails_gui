@@ -22,6 +22,7 @@
 $( document ).ready(function() {
     // New Glacier job scripts
     $('#new_glacier_job #select_region button').click(function() {
+        console.log('test')
         region = $(this).parent().children('select').val();
         $.ajax({
             url: "/user_panel/glacier_jobs/get_all_vaults",
