@@ -5,7 +5,7 @@ pid               "#{app_path}/current/tmp/pids/unicorn.pid"
 
 # listen on port
 #listen 3000, backlog: 64
-listen '/srv/http/pregnabit/shared/tmp/unicorn.sock', backlog: 64
+listen '/srv/http/glacier_gui/shared/tmp/unicorn.sock', backlog: 64
 
 # logging
 stderr_path 'log/unicorn.stderr.log'
