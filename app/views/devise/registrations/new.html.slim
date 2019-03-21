@@ -1,0 +1,23 @@
+=form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form-signin'}) do |f|
+  p.notice
+    = notice
+  p.alert
+    = alert
+
+  =link_to root_path do
+    img.mb-4 alt="" src=asset_path('glacier_logo.png') style="max-width: 300px;"
+
+  h1.h3.mb-3.font-weight-normal New account
+  =f.label 'Email address', class: 'sr-only'
+  =f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email address', requierd: true, class: 'form-control'
+
+  =f.label 'Password', class: 'sr-only'
+  =f.password_field :password, autocomplete: "new-password", class: 'form-control middle', placeholder: 'Password', required: true
+
+  = f.label 'Password confirmation', class: 'sr-only'
+  = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', placeholder: 'Password confirmation', required: true
+
+  =f.submit 'Sign up', class: 'button btn btn-lg btn-primary btn-block'
+  =link_to 'Create new account', new_user_registration_path
+  //TODO PASSWORD REMINDER
+  p.mt-5.mb-3.text-muted © 2019

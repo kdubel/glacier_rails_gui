@@ -1,10 +1,10 @@
-=form_for(resource, as: resource_name, url: session_path(resource_name), class: 'form-signin') do |f|
+=form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-signin'}) do |f|
   p.notice
     = notice
   p.alert
     = alert
 
-  //img.mb-4 alt="" height="72" src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="72" / TODO LOGO
+  img.mb-4 alt="" src=asset_path('glacier_logo.png') style="max-width: 300px;"
 
   h1.h3.mb-3.font-weight-normal Please sign in
   =f.label 'Email address', class: 'sr-only'
@@ -18,6 +18,7 @@
       =f.label :remember_me do
         =f.check_box :remember_me
         | Remember me
-  // TODO REGISTER AND PASSWORD REMINDER
   =f.submit 'Sign in', class: 'button btn btn-lg btn-primary btn-block'
+  =link_to 'Create new account', new_user_registration_path
+  //TODO PASSWORD REMINDER
   p.mt-5.mb-3.text-muted © 2019
