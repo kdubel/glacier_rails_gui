@@ -1,7 +1,15 @@
-=form_for @account, url: user_panel_home_settings_path, method: :post do |f|
-  =f.label :aws_id
-  =f.text_field :aws_id
-  =f.label :aws_secret
-  =f.password_field :aws_secret
+.col-sm-12
+  h1 Account settings
+  hr
 
-  =f.submit 'Save'
+  .col-sm-6.offset-sm-3
+    h4 AWS iAM settings
+    =form_for @account, url: user_panel_home_settings_path, method: :post do |f|
+      .form-group
+        =f.label :aws_id, 'AWS ID'
+        =f.text_field :aws_id, class: 'form-control'
+      .form-group
+        =f.label :aws_secret
+        =f.password_field :aws_secret, class: 'form-control'
+
+      =f.submit 'Save', class: 'btn btn-success'

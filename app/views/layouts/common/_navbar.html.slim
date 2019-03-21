@@ -8,7 +8,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
       li.nav-item
         =link_to 'Home', root_path, class: 'nav-link'
     .mr-sm-2
-      = link_to user_panel_home_settings_path do
-        = icon('fas', 'cog')
+      = link_to user_panel_home_settings_path, class: 'btn btn-outline-success my-2 my-sm-0', style: 'margin-right: 5px' do
+        => icon('fas', 'cog')
         | Settings
       = link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-danger my-2 my-sm-0'

@@ -9,6 +9,9 @@ class UserPanel::GlacierJobsController < UserPanelController
   end
 
   def new
+    unless current_user.has_aws_keys
+      redirect_to user_panel_home_settings_path
+    end
     @glacier_job = GlacierJob.new
     @regions = AwsService.new(current_user.id).get_all_regions
     @vaults = []

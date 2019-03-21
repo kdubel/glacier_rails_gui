@@ -12,6 +12,10 @@ class User < ApplicationRecord
     self.aws_account.try(:glacier_jobs)
   end
 
+  def has_aws_keys
+    !self.aws_account.aws_id.nil? and !self.aws_account.aws_secret.nil?
+  end
+
   private
 
   def create_aws_account

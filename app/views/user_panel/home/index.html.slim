@@ -1,13 +1,17 @@
 h1
-  | Welcome in Glacier GUI
-  span beta
+  | Welcome to Glacier GUI
+  span< style='color: #C9C9C9'
+    | beta
 
 p
-  | In order to see your vaults open new Job. There you will be able to see your vaults across all AWS regions.
-  | You will be able to schedule item retrive job which takes 4-5 hours. After completion you will be notified by email.
+  | In order to see your vaults - open new Job panel. There you will be able to see your vaults across all AWS regions.
+  br
+  | You will be able to schedule inventory retrive job. This can take 4-5 hours. After completion you will be notified
+  | by email. Also you can schedule complete removal of your vault and it will be done automatically :-)
+  br
   | Check it out right now!
 
 
-=button_to 'Go to jobs panel', user_panel_glacier_jobs_path, class: 'btn btn-outline-success my-2 my-sm-0'
-| or
+//=button_to 'Go to jobs panel', user_panel_glacier_jobs_path, class: 'btn btn-outline-success my-2 my-sm-0'
+//| or
 =link_to 'Start new job', new_user_panel_glacier_job_path, class: 'btn btn-outline-success my-2 my-sm-0'
