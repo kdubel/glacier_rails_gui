@@ -37,6 +37,7 @@ gem 'font-awesome-sass', '~> 5.6.1'
 gem 'whenever'
 
 gem 'pry'
+gem 'unicorn'
 
 
 
