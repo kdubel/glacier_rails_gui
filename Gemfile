@@ -38,6 +38,8 @@ gem 'whenever'
 
 gem 'pry'
 gem 'unicorn'
+gem 'attr_encrypted'
+
 
 
 

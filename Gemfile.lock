@@ -49,6 +49,8 @@ GEM
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
+    attr_encrypted (3.1.0)
+      encryptor (~> 3.0.0)
     autoprefixer-rails (9.4.7)
       execjs
     aws-eventstream (1.0.1)
@@ -117,6 +119,7 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    encryptor (3.0.0)
     erubi (1.8.0)
     execjs (2.7.0)
     ffi (1.9.25)
@@ -284,6 +287,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  attr_encrypted
   aws-sdk-glacier
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.3.1)

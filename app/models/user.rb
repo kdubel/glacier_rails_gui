@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_one :aws_account, dependent: :destroy
 
+
   after_create :create_aws_account
 
   def self.glacier_jobs

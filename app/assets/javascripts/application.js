@@ -22,7 +22,8 @@
 $( document ).ready(function() {
     // New Glacier job scripts
     $('#new_glacier_job #select_region button').click(function() {
-        console.log('test')
+        $(this).html('Loading...');
+        $(this).attr("disabled", true);
         region = $(this).parent().children('select').val();
         $.ajax({
             url: "/user_panel/glacier_jobs/get_all_vaults",
@@ -32,6 +33,8 @@ $( document ).ready(function() {
             success: function( result ) {
                 addTableRows($('#new_glacier_job #vault_select table tbody'), result, region);
                 $('#new_glacier_job #vault_select').show();
+                $('#new_glacier_job #select_region button').html('Search');
+                $('#new_glacier_job #select_region button').removeAttr("disabled");
             }
 
         });
